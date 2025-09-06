@@ -40,12 +40,13 @@ if [ -z "$PORT" ]; then
     PORT=22
 fi
 
-echo $SCRIPT_INPUT 1>&2
-echo $SERVERS      1>&2
-echo $PORT         1>&2
-echo $BASE_DIR     1>&2
-echo $USER         1>&2
-echo $SYNC_DIR     1>&2
+# Only print this if you are desperate, it may contain secrets
+# echo $SCRIPT_INPUT         1>&2
+echo "servers=$SERVERS"     1>&2
+echo "port=$PORT"           1>&2
+echo "base_dir=$BASE_DIR"   1>&2
+echo "user=$USER"           1>&2
+echo "sync_dir=$SYNC_DIR"   1>&2
 echo "DISABLE_VERSION_PATH=$DISABLE_VERSION_PATH" 1>&2
 
 mkdir -p ~/.ssh

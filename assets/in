@@ -32,12 +32,13 @@ if [ -z "$PORT" ]; then
     PORT=22
 fi
 
-echo $SCRIPT_INPUT 1>&2
-echo $SERVER    1>&2
-echo $PORT      1>&2
-echo $BASE_DIR  1>&2
-echo $USER      1>&2
-echo $VERSION   1>&2
+# Only print this if you are desperate, it may contain secrets
+#echo $SCRIPT_INPUT      1>&2
+echo server=$SERVER     1>&2
+echo port=$PORT         1>&2
+echo base_dir=$BASE_DIR 1>&2
+echo user=$USER         1>&2
+echo version=$VERSION   1>&2
 
 mkdir -p ~/.ssh
 (jq -r '.source.private_key // empty' <<< $SCRIPT_INPUT) > ~/.ssh/server_key
