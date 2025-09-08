@@ -71,3 +71,4 @@ using the specified user credential. Rsync across artifacts from the input direc
 #### Parameters
 
 * `sync_dir`: *Optional.* Directory to be sync'd. If specified limit the directory to be sync'd to sync_dir. If not specified everything in the `put` will be sent (which could include container resources, whole build trees etc.)
+* `version_file`: *Optional.* File that contains a string that represents the version. A directory will be created with this name (unless `disable_version_path: true` is set)
